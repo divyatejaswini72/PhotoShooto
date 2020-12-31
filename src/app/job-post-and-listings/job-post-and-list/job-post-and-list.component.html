@@ -1,0 +1,96 @@
+<div class="tab_container">
+    <input id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1" style="width: 39%;margin-left: 8%;" (click)="getJobListings()"><span
+            style="color: #6969fa;font-family: 'Poppins', sans-serif!important;">Your Job
+            Listings</span></label>
+
+    <input id="tab2" type="radio" name="tabs">
+    <label for="tab2" style="width: 39%;" (click)="getAvailabilityPosts()"><span
+            style="color:black;font-family: Century Gothic;">Your
+            Availability
+            Post</span></label>
+
+
+
+    <section id="{{content === true ? 'content1': 'content2'}}" class="tab-content">
+        <div class="grid-container">
+            <div *ngFor="let data of dataSource"
+                style="height: 135px;margin-top: 3px;border-bottom:solid rgb(115 122 115 / 62%) 2px">
+                <!-- <mat-grid-list cols="5" rowHeight="280px" class="fade-in"> -->
+                <div colspan="2" style="    width: 17%;    margin-top: -1.5%;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNgv-z2ilxaTi1QCdyjqYJyFUkIrVeY0LMYw&usqp=CAU"
+                        class="movie-poster" alt="{{data.id}}" />
+                </div>
+                <!-- <div> -->
+                <!-- <div> -->
+                <div class="row name">
+                    <div class="col">
+                        <mat-icon style="    color: #aeb0b2e0">person_outline</mat-icon>
+                    </div>
+                    <div class="col c1">
+                        {{data.name}}
+                    </div>,
+                    <div class="col id">{{data.id}}</div>
+                    <div class="col"><button mat-raised-button
+                            style="background-color:#6969fa ;color: white;font-family: Century Gothic;border-radius: 9px;">Edit</button>
+                    </div>
+                    <div class="col"><button
+                            style="margin-left: -68%;background-color:#6969fa ;color: white;font-family: Century Gothic;border-radius: 9px;"
+                            mat-raised-button>Delete</button>
+                    </div>
+                </div>
+                <div class="row row2">
+                    <div class="col">
+                        <mat-icon style="color: #aeb0b2e0">camera_alt_outline</mat-icon>
+                    </div>
+                    <div class="col c2">
+                        {{data.camname}}
+                    </div>
+
+                </div>
+                <div class="row row3">
+                    <div class="col">
+                        <mat-icon style="color: #aeb0b2e0">today</mat-icon>
+                    </div>
+                    <div class="col c3">
+                        <span style="font-family: Century Gothic;    color: black;" *ngIf="content == true">
+                            Looking for :
+                        </span><span style="font-family: Century Gothic;    color: black;"
+                            *ngIf="content == false">Available for : </span><span
+                            style="color:#6969fa;">{{data.date}}</span>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </mat-grid-tile> -->
+                <!-- </mat-grid-list> -->
+            </div>
+            <!-- <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator> -->
+            <mat-paginator style="background-color: #f1f1f159;" #paginator [pageSize]="pageSize"
+                [pageSizeOptions]="[3, 10, 20]" [showFirstLastButtons]="true" [length]="totalSize"
+                [pageIndex]="currentPage" (page)="handlePage($event)">
+            </mat-paginator>
+        </div>
+        <!-- <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[3, 10, 20]" [showFirstLastButtons]="true"
+            [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)">
+        </mat-paginator> -->
+    </section>
+
+    <!-- <section id="content2" class="tab-content">
+        <h3>Headline 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+    </section> -->
+</div>
+
+
+<!-- <mat-card *ngIf="noResult">
+            <mat-card-content>
+                <mat-card-header>
+                    <h2>No movies found...</h2>
+                </mat-card-header>
+            </mat-card-content>
+        </mat-card> -->
+
+<!-- </section> -->

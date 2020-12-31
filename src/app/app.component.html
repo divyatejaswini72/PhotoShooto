@@ -1,0 +1,166 @@
+<div style="border-bottom: solid #eef1f3 9px;    height: 27%;">
+  <mat-toolbar style="    height: 115px;
+  color: #6969fa;background-color: white;">
+    <mat-toolbar-row>
+      <img style="height: 77%" src='https://mir-s3-cdn-cf.behance.net/user/138/177243703826677.5f6c51ab969a2.png'>
+      <span style="font-family: Century Gothic;font-weight: bold;">PhotoShooto</span>
+      <span class="subtag">Your Memories Our Promise</span>
+      <span class="example-spacer"></span>
+      <div class="row tool">
+        <div class="col">
+          <button class="btn" mat-button>HOME</button>
+        </div>
+        <div class="col">
+          <button class="btn" mat-button>SERVICES</button>
+        </div>
+        <div class="col">
+          <button class="btn" mat-button>WINNERS</button>
+        </div>
+        <div class="col">
+          <button class="btn" mat-button>ABOUT US</button>
+        </div>
+        <div class="col">
+          <button style="color:#6969fa ;font-family: Century Gothic;" mat-raised-button>Hi Divya</button>
+        </div>
+      </div>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <span class="myaccount">My Account</span>
+      <span class="example-spacer"></span>
+      <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button> -->
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button> -->
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div class="grid-container">
+  <div>
+    <div class="row" style="margin-left: 43px" routerLink="/account" [routerLinkActive]="['is-active']">
+      <div>
+        <mat-icon style="margin-left: -57%" mat-list-icon>person_outlined</mat-icon>
+      </div>
+      <div>
+        <span class="full-width sidenav" *ngIf="isExpanded || isShowing">Account Details</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row" style="cursor: pointer;    margin-left: 43px" [routerLinkActive]="['is-active']">
+      <div>
+        <mat-icon mat-list-icon style="margin-left: -57%">sync</mat-icon>
+      </div>
+      <div>
+        <span class="full-width sidenav" *ngIf="isExpanded || isShowing">Verification Details</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row" style="cursor: pointer;    margin-left: 43px" [routerLinkActive]="['is-active']">
+      <div>
+        <mat-icon mat-list-icon style="margin-left: -57%">history</mat-icon>
+      </div>
+      <div>
+        <span class="full-width sidenav" *ngIf="isExpanded || isShowing">Services</span>
+      </div>
+    </div>
+  </div>
+  <div routerLink="/job-list" style="cursor: pointer;margin-left: 43px" [routerLinkActive]="['is-active']">
+    <div class="row">
+      <div>
+        <mat-icon mat-list-icon style="margin-left: -57%">insert_photo_outlined</mat-icon>
+      </div>
+      <div>
+        <span class="full-width sidenav" *ngIf="isExpanded || isShowing">Job
+          Post and Listings</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row" style="cursor: pointer;    margin-left: 43px" [routerLinkActive]="['is-active']">
+      <div>
+        <mat-icon mat-list-icon style="margin-left: -57%">notifications_none</mat-icon>
+      </div>
+      <div>
+        <span class="full-width sidenav" *ngIf="isExpanded || isShowing">Notification</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row" style="margin-left: 43px" [routerLinkActive]="['is-active']">
+      <div>
+        <mat-icon mat-list-icon style="margin-left: -57%">help</mat-icon>
+      </div>
+      <div>
+        <span class="full-width sidenav" *ngIf="isExpanded || isShowing">Help</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<mat-toolbar style="height: 180px;color: white;
+  background-color: #6969fa;">
+  <div class="col cl1">
+    <div class="row">
+      <span>PhotoShooto</span>
+    </div>
+    <div class="row rr1">
+      For any queries or
+    </div>
+    <div class="row rr1">
+      doubts feel free to
+    </div>
+    <div class="row rr1">
+      <p>reach us.</p>
+    </div>
+  </div>
+
+
+  <div class="col cl2">
+    <div class="row">
+      About Us
+    </div>
+    <div class="row">
+      Contact
+    </div>
+    <div class="row">
+      FAQs
+    </div>
+    <div class="row">
+      Terms & Conditions
+    </div>
+  </div>
+
+  <div class="col cl3">
+    <div class="row">
+      <a href="#" class="fa fa-facebook"></a>Facebook
+    </div>
+    <div class="row">
+      <a href="#" class="fa fa-twitter"></a> Twitter
+    </div>
+    <div class="row">
+      <a href="#" class="fa fa-instagram"></a> Instagram
+    </div>
+
+  </div>
+
+  <div class="col cl3">
+    <div class="row">
+      Subscribe to our news letter
+    </div>
+    <div class="row">
+      Email Address
+    </div>
+  </div>
+
+
+</mat-toolbar>
+<div class="col foot">
+  &#169; PhotoShooto All Rights Reserved
+</div>
